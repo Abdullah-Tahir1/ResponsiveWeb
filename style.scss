@@ -1,0 +1,253 @@
+$accent-color: #a8dff1; /* Accent color variable */
+
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"); /* Importing Google Fonts */
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  height: 80px;
+  /* Styling the header */
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 40, 40, 1),
+    rgba(40, 40, 40, 0) 99%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul a li {
+  font-family: "Kaushan Script", cursive;
+  list-style: none;
+  transition: all 0.1s ease-in-out;
+  font-size: 1.5rem;
+  position: relative;
+  /* Styling the navigation links */
+}
+
+nav ul a li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $accent-color; /* Using accent color variable for the underline */
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+nav ul a li:hover::after {
+  transform: scaleX(1);
+}
+
+a.active li {
+  font-family: "Kaushan Script", cursive;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.5rem;
+  position: relative;
+  color: $accent-color; /* Using accent color variable for the active link color */
+  transform: scale(1.3);
+}
+
+a.active li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Styling the main content section */
+}
+
+.main-slider {
+  position: relative;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  /* Styling the image slider section */
+}
+
+.main-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+  background-color: black;
+}
+
+.main-slider .active {
+  opacity: 1;
+}
+
+.city-section {
+  background-color: #f2f2f2;
+  height: 100vh;
+  /* Styling the city section */
+}
+
+.city-section .city-slider {
+  position: relative;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  /* Styling the city image slider section */
+}
+
+.city-section .city-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+  background-color: black;
+}
+
+.city-section .city-slider .active {
+  opacity: 1;
+}
+
+.city-section .info {
+  position: relative;
+  top: -70%;
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  /* Styling the city information section */
+}
+
+.city-section .info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Kaushan Script", cursive;
+}
+
+.city-section .info p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  backdrop-filter: blur(5px);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 320px) {
+  /* iPhone 4 */
+  header {
+    height: 60px;
+  }
+
+  nav ul a li {
+    font-size: 1.2rem;
+  }
+
+  .city-section .info {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /* iPhone X */
+  header {
+    height: 70px;
+  }
+
+  nav ul a li {
+    font-size: 1.3rem;
+  }
+
+  .city-section .info {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 411px) {
+  /* Google Pixel */
+  header {
+    height: 70px;
+  }
+
+  nav ul a li {
+    font-size: 1.4rem;
+  }
+
+  .city-section .info {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* iPad */
+  header {
+    height: 70px;
+  }
+
+  nav ul a li {
+    font-size: 1.4rem;
+  }
+
+  .city-section .info {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  /* Macbook Pro */
+  header {
+    height: 80px;
+  }
+
+  nav ul a li {
+    font-size: 1.5rem;
+  }
+
+  .city-section .info {
+    font-size: 36px;
+  }
+}
